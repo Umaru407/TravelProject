@@ -120,16 +120,29 @@ DATABASES = {
 
 #凱皓的資料庫
 
+# DATABASES = {
+#       'default': {
+#       'ENGINE': 'django.db.backends.mysql',
+#       'NAME': 'database', #here is import
+#       'USER': 'root',
+#       'PASSWORD': 'aabb3210$',
+#       'HOST': 'localhost',
+#       'PORT': '4433',
+#       }
+#   }
+
 DATABASES = {
-      'default': {
-      'ENGINE': 'django.db.backends.mysql',
-      'NAME': 'database', #here is import
-      'USER': 'root',
-      'PASSWORD': 'aabb3210$',
-      'HOST': 'localhost',
-      'PORT': '4433',
-      }
-  }
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 't2',
+        'USER': 'root',
+        'PASSWORD': 'apple910407',
+        'HOST': 'localhost',
+        'PORT': 3306,
+        'OPTIONS':{'charset':'utf8mb4'}
+        
+    }
+} 
 
 
 '''
@@ -148,7 +161,7 @@ DATABASES = {
 }
 
 
-#上鋒的資料庫
+上鋒的資料庫
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -221,6 +234,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3001",
     "http://127.0.0.1:3001",
     "http://127.0.0.1:3000",
+    "https://ai-travel.onrender.com"
 ]
 
 ##STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
