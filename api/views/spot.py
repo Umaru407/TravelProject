@@ -29,6 +29,7 @@ def spotList(request):
 def spotWithPictureList(request):
     queryset = Spot.objects.all()
     serializer = spotWithPictureURLSerializer(queryset, many=True)
+
     response_data = {
                 "success": True,
                 "message": "景點資料回傳成功",
