@@ -107,39 +107,6 @@ WSGI_APPLICATION = 'TravelProject.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 
-
-#誌軒
-"""
-DATABASES = {
-     'default': {
-     'ENGINE': 'django.db.backends.mysql',
-     'NAME': 'djangosite2', #here is import
-     'USER': 'root',
-     'PASSWORD': 'tim910410',
-     'HOST': 'localhost',
-     'PORT': '3306',
-     'OPTIONS':{'charset':'utf8mb4'}
-     }
- }
-"""
-
-
-
-
-
-#凱皓的資料庫
-
-# DATABASES = {
-#       'default': {
-#       'ENGINE': 'django.db.backends.mysql',
-#       'NAME': 'database', #here is import
-#       'USER': 'root',
-#       'PASSWORD': 'aabb3210$',
-#       'HOST': 'localhost',
-#       'PORT': '4433',
-#       }
-#   }
-
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
@@ -162,49 +129,21 @@ DATABASES = {
     )
 }
 
-'''
-
-#能靖的資料庫
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mydatabase',
-        'USER':'root',
-        'PASSWORD':'m714620K',
-        'HOST':'localhost',
-        'PORT':3306,
-    }
-}
 
 
-上鋒的資料庫
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'traveldb2',
-        'USER': 'root',
-        'PASSWORD': 'Apple910407.',
-        'HOST': 'localhost',
-        'PORT': 3306,
-        'OPTIONS':{'charset':'utf8mb4'}
-        
-    }
-}
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'railway',
-        'USER': 'root',
-        'PASSWORD': 'Ha0aIJNVhR0IkHlHoVSe',
-        'HOST': 'containers-us-west-200.railway.app',
-        'PORT': 7921,
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'railway',
+#         'USER': 'root',
+#         'PASSWORD': 'Ha0aIJNVhR0IkHlHoVSe',
+#         'HOST': 'containers-us-west-200.railway.app',
+#         'PORT': 7921,
         
         
-    }
-}
-'''
+#     }
+# }
+
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
@@ -267,20 +206,15 @@ CORS_ALLOWED_ORIGINS = [
 # MEDIA_ROOT= os.path.join(BASE_DIR,"media/")
 AUTH_USER_MODEL = 'api.Account'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "frontend/build/static"),
-]
-
-
-
 # USE_S3 = os.getenv('USE_S3') == 'TRUE'
-USE_S3 = False
+USE_S3 = True
 
 if USE_S3:
     # aws settings
     # AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
     # AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
     # AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
+
     AWS_ACCESS_KEY_ID = 'AKIASHKK6YEOCTDNDDER'
     AWS_SECRET_ACCESS_KEY = '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'
     AWS_STORAGE_BUCKET_NAME = 'aitravel'
@@ -292,10 +226,17 @@ if USE_S3:
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_LOCATION}/'
     STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 else:
-    STATIC_URL = '/staticfiles/'
+    STATIC_URL = '/static/'
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+# STATIC_URL = '/frontend/build/'
+
+# STATICFILES_DIRS = (os.path.join(BASE_DIR, 'frontend/static'),)
+
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "frontend/build/static"),
+]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
