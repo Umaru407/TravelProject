@@ -50,11 +50,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'api.apps.ApiConfig',
-    # 'rest_framework_simplejwt',
     'rest_framework',
     'corsheaders',
     'TravelProject',
     'storages',
+    'rest_framework_simplejwt',
 ]
 
 MIDDLEWARE = [
