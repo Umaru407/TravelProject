@@ -7,3 +7,5 @@ pip install --force-reinstall -U djangorestframework-simplejwt
 
 python manage.py collectstatic --no-input
 python manage.py migrate
+
+python manage.py createsuperuser
