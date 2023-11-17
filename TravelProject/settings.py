@@ -124,7 +124,8 @@ WSGI_APPLICATION = 'TravelProject.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         # Feel free to alter this value to suit your needs.
-        default='postgresql://postgres:postgres@localhost:5432/AItravelDB',
+        # default='postgres://aitraveldb_user:tR1MRoPzJ95qpqEqp0lUs5FJbf9MmQFL@dpg-clasr3ug1b2c73a826lg-a.singapore-postgres.render.com/aitraveldb',
+        default='postgres://aitraveldb_user:tR1MRoPzJ95qpqEqp0lUs5FJbf9MmQFL@dpg-clasr3ug1b2c73a826lg-a/aitraveldb',
         conn_max_age=600
     )
 }
