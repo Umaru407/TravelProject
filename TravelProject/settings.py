@@ -207,7 +207,7 @@ CORS_ALLOWED_ORIGINS = [
 AUTH_USER_MODEL = 'api.Account'
 
 # USE_S3 = os.getenv('USE_S3') == 'TRUE'
-USE_S3 = True
+USE_S3 = False
 
 if USE_S3:
     # aws settings
